@@ -59,14 +59,11 @@ public abstract class Innlegg {
 	}
 	
 	public boolean erLik(Innlegg innlegg) {
-		throw new UnsupportedOperationException(TODO.method());
-
+		return this.getId() == innlegg.getId();
 	}
 	
-	@Override
 	public String toString() {
-		
-		throw new UnsupportedOperationException(TODO.method());
+		return this.getId() + "\n" + this.getBruker() +  "\n" + this.getDato() + "\n" + this.getLikes() + "\n";
 				
 	}
 	
