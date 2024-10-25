@@ -27,26 +27,38 @@ public class Blogg {
 	}
 
 	public int finnInnlegg(Innlegg innlegg) {
-		int pos = finnInnlegg(innlegg);
-		if (pos >= 0) { // funnet!
-			return tabell[pos];
-		} else {
-			return null;
+		for(int i =0; i < getAntall(); i++) {
+			if(getSamling()[i].erLik(innlegg)) {
+				return i;	
+			}
 		}
+		return -1;
 	}
-
 	public boolean finnes(Innlegg innlegg) {
-		throw new UnsupportedOperationException(TODO.method());
+		for(int i =0; i < getAntall(); i++) {
+		if(getSamling()[i].erLik(innlegg)) {
+			return true;
+		}
+		
+		}
+		return false;
 	}
 
 	public boolean ledigPlass() {
-		throw new UnsupportedOperationException(TODO.method());
-
+		if(nesteLedige < tabell.length) {
+			return true;
+		}
+		return false;
 	}
 
 	public boolean leggTil(Innlegg innlegg) {
 
-		throw new UnsupportedOperationException(TODO.method());
+		if(nesteLedige < tabell.length) {
+			tabell[nesteLedige]=innlegg;
+			nesteLedige++;
+			return true;
+		}
+		return false;
 	}
 
 	public String toString() {
