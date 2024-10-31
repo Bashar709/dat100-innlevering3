@@ -80,8 +80,18 @@ public class Blogg {
 
 	public boolean slett(Innlegg innlegg) {
 
-		throw new UnsupportedOperationException(TODO.method());
-	}
+		int p = finnInnlegg(innlegg);
+		
+		if (p < 0) {  // 0 eller -1 å det betyr at boka finnes ikke
+			return false;
+		} else {
+			tabell[p] = tabell [nesteLedige - 1];
+			tabell [nesteLedige - 1] = null;
+			nesteLedige --;
+			return true;
+		}
+		
+	}	
 
 	public int[] search(String keyword) {
 

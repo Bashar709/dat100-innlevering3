@@ -5,8 +5,6 @@ import no.hvl.dat100.oppgave3.Blogg;
 
 
 public class SkrivBlogg {
-	private String mappe;
-	private String filnavn;
 
 	public static boolean skriv(Blogg samling, String mappe, String filnavn) {
 		try {
@@ -22,6 +20,7 @@ public class SkrivBlogg {
 			System.out.println(e.getMessage());
 		}
 		return true;
+		
 
 	}
 
