@@ -1,15 +1,28 @@
 package no.hvl.dat100.oppgave4;
 
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
+import java.io.File;
+import no.hvl.dat100.oppgave3.Blogg;
 
-import no.hvl.dat100.common.TODO;
-import no.hvl.dat100.oppgave3.*;
 
 public class SkrivBlogg {
+	private String mappe;
+	private String filnavn;
 
 	public static boolean skriv(Blogg samling, String mappe, String filnavn) {
+		try {
+			File myfile = new File("Skrive blogg.txt");
 
-		throw new UnsupportedOperationException(TODO.method());
+			if (myfile.createNewFile()) {
+				System.out.println("filen er oppretta " + myfile.getName());
+
+			} else {
+				System.out.println("filen ekistetere allerede");
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return true;
+
 	}
+
 }
